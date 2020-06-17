@@ -1,5 +1,5 @@
 *Practicing netlists by replicating a single delay line cell
-
+*node 3 represents the output for this simulation
 
 V1 1 0 PULSE(0 1 0 7.5n 7.5n 100n 1 1)
 R1 1 0 220
@@ -8,6 +8,5 @@ L1 1 2 290n
 R2 2 3 0.17
 C2 3 0 6.8p
 R3 3 0 220
-Vmtr 3 -1 0; 0V voltage source added to allow us to measure output signal
 
 .tran 200n
