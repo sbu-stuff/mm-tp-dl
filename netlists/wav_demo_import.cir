@@ -1,0 +1,5 @@
+*Demo for importing .wav file as input signal
+
+V1 1 0 wavefile=wav_demo_data.wav
+
+.tran 300n
