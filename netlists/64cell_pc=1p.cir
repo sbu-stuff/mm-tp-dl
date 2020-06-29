@@ -1,6 +1,6 @@
 *Auto-gererated 64-cell delay line circuit
 
-V1 1 0 PULSE(0 1 0 7.5n 7.5n 100n 1 1) Cpar = 1p
+V1 1 0 PULSE(0 1 0 7.5n 7.5n 100n 1 1)
 R1 1 0 220
 C2 1 0 6.8p Cpar = 1p
 L2 1 2 290n
@@ -196,7 +196,5 @@ L65 127 128 290n
 R66 128 -1 0.17
 C66 -1 0 6.8p Cpar = 1p
 R67 -1 0 220
-R68 -1 0 1E6
-C67 -1 0 25p
 
 .tran 300n
