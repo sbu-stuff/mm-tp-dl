@@ -30,7 +30,7 @@ function [] = writeNetlist(n_cells,file_name,pm)
   
   counts += 1;
   netlist = [netlist,sprintf(['\nC%d -1 0 ',pm.C,' Cpar = ',pm.PC,'\nR%d -1 0 ',pm.Ro,...
-      '\n\n.tran %dn'],counts(1),counts(3),200+ceil((100/64)*n_cells+2700))];
+      '\n\n.tran %dn'],counts(1),counts(3),200+ceil((100/64)*n_cells+200))];
       
   fID = fopen(file_name,'w');
   fprintf(fID,netlist);
