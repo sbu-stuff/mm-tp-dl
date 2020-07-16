@@ -15,8 +15,8 @@ function [] = writeNetlist(n_cells,file_name,pm)
     pm.PC = '0';
   end
 
-  netlist = sprintf(['*Auto-gererated %d-cell delay line circuit\n\nV1 1 0 ',...
-      pm.V],n_cells);
+  netlist = [sprintf('*Auto-gererated %d-cell delay line circuit\n\nV1 1 0 ',...
+       n_cells),pm.V];
   counts = [1 0 0]; %[C, L, Ri]
   nodes = [[1:2:2*n_cells-1],-1]; %node -1 will represent output
   
@@ -32,7 +32,7 @@ function [] = writeNetlist(n_cells,file_name,pm)
   netlist = [netlist,sprintf(['\nC%d -1 0 ',pm.C,' Cpar = ',pm.PC,'\nR%d -1 0 ',pm.Ro,...
       '\n\n.tran %dn'],counts(1),counts(3),200+ceil((100/64)*n_cells+200))];
       
-  fID = fopen(file_name,'w');
+  fID = fopen(['C:\Users\zOob\Documents\SB REU\LTspice\netlists_\',file_name],'w');
   fprintf(fID,netlist);
   fclose(fID);
   
