@@ -7,7 +7,7 @@ function [] = writeNetlist(n_cells,file_name,pm)
 %the struct may be omitted from the function call, in which case a default set of values will be used
 
   if ~exist('pm')
-    pm.V = 'PULSE(0 1 0 7.5n 7.5n 100n 1 1)';
+    pm.V = 'V1 1 0 PULSE(0 1 0 7.5n 7.5n 100n 1 1)';
     pm.Ri = '0.17';
     pm.Ro = '220';
     pm.L = '290n';
@@ -15,7 +15,7 @@ function [] = writeNetlist(n_cells,file_name,pm)
     pm.PC = '0';
   end
 
-  netlist = [sprintf('*Auto-gererated %d-cell delay line circuit\n\nV1 1 0 ',...
+  netlist = [sprintf('*Auto-gererated %d-cell delay line circuit\n\n',...
        n_cells),pm.V];
   counts = [1 0 0]; %[C, L, Ri]
   nodes = [[1:2:2*n_cells-1],-1]; %node -1 will represent output
