@@ -1,0 +1,21 @@
+* 4th order butterworth low pass filter in netlist form
+
+V1 1 0 SINE(0 1m 50Meg 0 1 1 4)
+R1 3 0 1
+E1 3 0 8 2 10k
+R2 3 2 1
+R3 2 0 1
+R4 8 7 0.43478
+C1 8 0 10n
+C2 7 0 10n
+R5 7 1 0.43478
+R6 -1 0 1
+E2 -1 0 5 6 10k
+R7 -1 6 1
+R8 6 0 1
+R9 5 4 0.43478
+C3 5 0 10n
+C4 4 0 10n
+R10 4 3 0.43478
+
+.tran 200n
